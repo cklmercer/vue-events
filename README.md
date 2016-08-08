@@ -41,7 +41,7 @@ new Vue({
     data() {
         return {
             eventData: {
-                // The data to pass along with tthe event
+                // The data to pass along with the event
             }
         }
     },
