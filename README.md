@@ -2,7 +2,7 @@
 
 A [Vue.js](http://vuejs.org) plugin that provides a global event bus and a couple helper methods.
 
-**Works with `Vue 2.0`**
+_Works with `Vue 2.0`_
 
 ## Installation
 
@@ -58,7 +58,7 @@ new Vue({
 })
 ```
 
-**Note: `$event.fire` and `$events.emit` are aliases for `$events.$emit`.**
+_Note: `$event.fire` and `$events.emit` are aliases for `$events.$emit`._
 
 #### Listening for an event
 There are 3 ways to register an event listener using this plugin. They're each functionally equivalent.
@@ -78,7 +78,7 @@ new Vue({
 })
 ```
 
-**Note: `$event.listen` and `$events.on` are aliases for `$events.$on`.**
+_Note: `$event.listen` and `$events.on` are aliases for `$events.$on`._
 
 ## License
 
