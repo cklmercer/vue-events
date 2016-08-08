@@ -58,7 +58,7 @@ new Vue({
 })
 ```
 
-_Note: `$event.fire` and `$events.emit` are aliases for `$events.$emit`._
+_Note: `$events.fire` and `$events.emit` are aliases for `$events.$emit`._
 
 #### Listening for an event
 There are 3 ways to register an event listener using this plugin. They're each functionally equivalent.
@@ -78,7 +78,7 @@ new Vue({
 })
 ```
 
-_Note: `$event.listen` and `$events.on` are aliases for `$events.$on`._
+_Note: `$events.listen` and `$events.on` are aliases for `$events.$on`._
 
 ## License
 
