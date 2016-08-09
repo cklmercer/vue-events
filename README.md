@@ -83,6 +83,9 @@ new Vue({
 
 _Note: `$events.listen` and `$events.on` are aliases for `$events.$on`._
 
+## Demo
+If you'd like to demo `vue-events` try [vue-stack-2.0](https://github.com/cklmercer/vue-stack-2.0)
+
 ## License
 
 [MIT](http://opensource.org/licenses/MIT)
