@@ -2,7 +2,7 @@
 
 A [Vue.js](http://vuejs.org) plugin that provides a global event bus and a couple helper methods.
 
-_Works with `Vue 2.0`_
+Works with both `Vue 1.0` & `Vue 2.0`
 
 ## Installation
 
@@ -34,17 +34,18 @@ This plugin extends `Vue.prototype` to include a new `$events` object. The `$eve
 includes couple aliases for the `vm.$emit` & `vm.$on` methods.
 
 #### Firing an event
-There are 3 ways to fire an event using this plugin. They're each functionally equivalent.
+There are 3 methods that fire events. They're functionally identical and only differ in name.
 ```
 new Vue({
-    el: '#app',
+
     data() {
         return {
             eventData: {
-                // The data to pass along with the event
+                foo: 'baz'
             }
         }
     },
+    
     mounted() {
         // Option #1
         this.$events.fire('testEvent', this.eventData);
@@ -55,16 +56,17 @@ new Vue({
         // Option #3
         this.$events.$emit('testEvent', this.eventData);
     }
+    
 })
 ```
 
 _Note: `$events.fire` and `$events.emit` are aliases for `$events.$emit`._
 
 #### Listening for an event
-There are 3 ways to register an event listener using this plugin. They're each functionally equivalent.
+There are 3 methods that register event listeners. They're functionally identical and only differ in name.
 ```
 new Vue({
-    el: '#app',
+
     mounted() {
         // Option #1
         this.$events.listen('testEvent', eventData => console.log(eventData));
@@ -75,6 +77,7 @@ new Vue({
         // Option #3
         this.$events.$on('testEvent', eventData => console.log(eventData));
     }
+    
 })
 ```
 
