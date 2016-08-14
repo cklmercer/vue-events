@@ -37,7 +37,6 @@ function plugin(Vue) {
             if (typeof this.$options.events != 'object') return;
 
             this.$on('hook:mounted', () => {
-
                 for (var key in this.$options.events) {
                     events.on(key, this.$options.events[key]);
                 }
