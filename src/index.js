@@ -35,9 +35,9 @@ function plugin(Vue) {
         beforeCreate() {
             if (typeof this.$options.events != 'object') return;
 
-            this.$on('hook:mounted', () => {
+            this.$on('hook:beforeMount', () => {
                 for (var key in this.$options.events) {
-                    events.on(key, this.$options.events[key]);
+                    events.on(key, this.$options.events[key].bind(this));
                 }
             });
         }
