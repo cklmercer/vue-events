@@ -33,7 +33,6 @@ function plugin(Vue) {
     Vue.mixin({
 
         beforeCreate() {
-
             if (typeof this.$options.events != 'object') return;
 
             this.$on('hook:mounted', () => {
