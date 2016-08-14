@@ -80,8 +80,23 @@ new Vue({
     
 })
 ```
-
 _Note: `$events.listen` and `$events.on` are aliases for `$events.$on`._
+
+
+You may also register event listeners using the `events` option, similar to the way you could in `Vue 1.0`.
+```
+new Vue({
+
+    events: {
+        testEvent(eventData) {
+            console.log(eventData);
+        }
+    }
+    
+})
+```
+_Note: The `events` option may work differently than it does with `Vue 1.0` ._
+
 
 ## Demo
 If you'd like to demo `vue-events` try [vue-stack-2.0](https://github.com/cklmercer/vue-stack-2.0)
