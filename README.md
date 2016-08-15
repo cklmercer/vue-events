@@ -2,15 +2,25 @@
 
 A [Vue.js](http://vuejs.org) plugin that provides a global event bus and a couple helper methods.
 
-Works with both `Vue 1.0` & `Vue 2.0`
+Works with both `Vue 1.0` & `Vue 2.0`.
 
 ## Installation
 
 ##### 1.) Install package via NPM
+**Vue 1.x**
 
 ```
-$ npm install vue-events
+npm install vue-events
 ```
+```
+npm install vue-events@vue-1.x
+```
+
+**Vue 2.x**
+```
+npm install vue-events@vue-2.x
+```
+
 
 ##### 2.) Install plugin within project.
 ```
