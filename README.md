@@ -81,7 +81,7 @@ new Vue({
         // Option #1
         this.$events.listen('testEvent', eventData => console.log(eventData));
         
-        // Option #1
+        // Option #2
         this.$events.on('testEvent', eventData => console.log(eventData));
         
         // Option #3
