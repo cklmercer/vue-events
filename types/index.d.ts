@@ -10,4 +10,4 @@ declare namespace VueEvents {
 
 declare class VueEvents extends E.VueEvents {}
 
-export = VueEvents
+export default VueEvents
