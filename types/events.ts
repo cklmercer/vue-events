@@ -12,28 +12,28 @@ export declare class VueEvents {
    * Fire a event.
    *
    * @param {string} eventName Name of your registered event.
-   * @param {any} value The data passed to the function.
+   * @param {any} [value] The data passed to the function.
    * @memberOf VueEvents
    */
-  fire(eventName: string, value: any): void
+  fire(eventName: string, value?: any): void
 
   /**
    * Fire a event.
    *
    * @param {string} eventName Name of your registered event.
-   * @param {any} value The data passed to the function.
+   * @param {any} [value] The data passed to the function.
    * @memberOf VueEvents
    */
-  emit(eventName: string, value: any): void
+  emit(eventName: string, value?: any): void
 
   /**
    * Fire a event.
    *
    * @param {string} eventName Name of your registered event.
-   * @param {any} value The data passed to the function.
+   * @param {any} [value] The data passed to the function.
    * @memberOf VueEvents
    */
-  $emit(eventName: string, value: any): void
+  $emit(eventName: string, value?: any): void
 
   /**
    * Register a new event.

@@ -3,7 +3,7 @@
  */
 
 import Vue = require("vue");
-import VueEvents = require('./index')
+import VueEvents from './index'
 
 declare module "vue/types/vue" {
   interface Vue {
