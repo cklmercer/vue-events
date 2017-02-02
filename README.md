@@ -27,17 +27,17 @@ require('vue-events')
 ```
 
 ## Methods
-| Method | Params | Description | Official Docs |
-| --- | --- | --- |
-| `vm.$events.$emit` | `event, payload` | Emit the event with the given payload. | [vm.$emit](https://vuejs.org/v2/api/#vm-emit) |
-| `vm.$events.emit` | `event, payload` | Emit the event with the given payload. Alias for `vm.$events.$emit` [vm.$emit](https://vuejs.org/v2/api/#vm-emit) |
-| `vm.$events.fire` | `event, payload` | Emit the event with the given payload. Alias for `vm.$events.$emit` | [vm.$emit](https://vuejs.org/v2/api/#vm-emit) |
-| `vm.$events.$on` | `event, callback` | Listen for the event with the given callback. | [vm.$on](https://vuejs.org/v2/api/#vm-on) |
-| `vm.$events.on` | `event, callback` | Listen for the event with the given callback. Alias for `vm.$events.$on` | [vm.$on](https://vuejs.org/v2/api/#vm-on) |
-| `vm.$events.listen` | `event, callback` | Listen for the event with the given callback. Alias for `vm.$events.$on` | [vm.$on](https://vuejs.org/v2/api/#vm-on) |
-| `vm.$events.$off` | `event, callback` | Remove event listener(s) for the event | [vm.$off](https://vuejs.org/v2/api/#vm-off) |
-| `vm.$events.off` | `event, callback` | Remove event listener(s) for the event. Alias for `vm.$events.$off` | [vm.$off](https://vuejs.org/v2/api/#vm-off) |
-| `vm.$events.remove` | `event, callback` | Remove event listener(s) for the event Alias for `vm.$events.$off` | [vm.$off](https://vuejs.org/v2/api/#vm-off) |
+Method              | Params            | Description                                                              | Official Docs
+------------------- | ----------------- | ------------------------------------------------------------------------ | ---------------------------------------------
+`vm.$events.$emit`  | `event, payload`  | Emit the event with the given payload.                                   | [vm.$emit](https://vuejs.org/v2/api/#vm-emit)
+`vm.$events.emit`   | `event, payload`  | Emit the event with the given payload. Alias for `vm.$events.$emit`      | [vm.$emit](https://vuejs.org/v2/api/#vm-emit)
+`vm.$events.fire`   | `event, payload`  | Emit the event with the given payload. Alias for `vm.$events.$emit`      | [vm.$emit](https://vuejs.org/v2/api/#vm-emit)
+`vm.$events.$on`    | `event, callback` | Listen for the event with the given callback.                            | [vm.$on](https://vuejs.org/v2/api/#vm-on)
+`vm.$events.on`     | `event, callback` | Listen for the event with the given callback. Alias for `vm.$events.$on` | [vm.$on](https://vuejs.org/v2/api/#vm-on)
+`vm.$events.listen` | `event, callback` | Listen for the event with the given callback. Alias for `vm.$events.$on` | [vm.$on](https://vuejs.org/v2/api/#vm-on)
+`vm.$events.$off`   | `event, callback` | Remove event listener(s) for the event                                   | [vm.$off](https://vuejs.org/v2/api/#vm-off)
+`vm.$events.off`    | `event, callback` | Remove event listener(s) for the event. Alias for `vm.$events.$off`      | [vm.$off](https://vuejs.org/v2/api/#vm-off)
+`vm.$events.remove` | `event, callback` | Remove event listener(s) for the event Alias for `vm.$events.$off`       | [vm.$off](https://vuejs.org/v2/api/#vm-off)
 
 
 
