@@ -1,117 +1,115 @@
 # vue-events
 
-A [Vue.js](http://vuejs.org) plugin that provides a global event bus and a couple helper methods.
+A [Vue.js](http://vuejs.org) plugin that simplify events.
 
 Works with both `Vue 1.0` & `Vue 2.0`.
 
+
 ## Installation
-
 ##### 1.) Install package via Yarn or NPM
-
+```bash
+$ yarn add vue-events
 ```
-yarn add vue-events
+---
+```bash
+$ npm install vue-events
 ```
-
-or
-
-```
-npm install vue-events
-```
-
 ##### 2.) Install plugin within project.
-```
-import Vue from 'vue';
-import VueEvents from 'vue-events';
-
+```javascript
+import Vue from 'vue'
+import VueEvents from 'vue-events'
 Vue.use(VueEvents)
 ```
-
-or
-
+---
+```javascript
+window.Vue = require('vue')
+require('vue-events')
 ```
-window.Vue = require('vue');
-require('vue-events');
-```
+
+## Methods
+| Method | Params | Description | Official Docs |
+| --- | --- | --- |
+| `vm.$events.$emit` | `event, payload` | Emit the event with the given payload. | [vm.$emit](https://vuejs.org/v2/api/#vm-emit) |
+| `vm.$events.emit` | `event, payload` | Emit the event with the given payload. Alias for `vm.$events.$emit` [vm.$emit](https://vuejs.org/v2/api/#vm-emit) |
+| `vm.$events.fire` | `event, payload` | Emit the event with the given payload. Alias for `vm.$events.$emit` | [vm.$emit](https://vuejs.org/v2/api/#vm-emit) |
+| `vm.$events.$on` | `event, callback` | Listen for the event with the given callback. | [vm.$on](https://vuejs.org/v2/api/#vm-on) |
+| `vm.$events.on` | `event, callback` | Listen for the event with the given callback. Alias for `vm.$events.$on` | [vm.$on](https://vuejs.org/v2/api/#vm-on) |
+| `vm.$events.listen` | `event, callback` | Listen for the event with the given callback. Alias for `vm.$events.$on` | [vm.$on](https://vuejs.org/v2/api/#vm-on) |
+| `vm.$events.$off` | `event, callback` | Remove event listener(s) for the event | [vm.$off](https://vuejs.org/v2/api/#vm-off) |
+| `vm.$events.off` | `event, callback` | Remove event listener(s) for the event. Alias for `vm.$events.$off` | [vm.$off](https://vuejs.org/v2/api/#vm-off) |
+| `vm.$events.remove` | `event, callback` | Remove event listener(s) for the event Alias for `vm.$events.$off` | [vm.$off](https://vuejs.org/v2/api/#vm-off) |
+
+
+
+
 
 ## Usage
-
 #### The `$events` prototype object.
 This plugin extends `Vue.prototype` to include a new `$events` object, which is a just a plain `vm`
 that will serve as your global event bus. The `$events` `vm` has a couple aliases for the standard
 event methods.
 
+
 #### Firing an event
-There are 3 methods that fire events. They're functionally identical and only differ in name.
-```
+There are 3 methods that fire events.
+
+_Note: `$events.fire` & `$events.emit` are aliases for `$events.$fire`_
+
+```javascript
 new Vue({
 
-    data() {
-        return {
-            eventData: {
-                foo: 'baz'
-            }
-        }
-    },
-
-    mounted() {
-        // Option #1
-        this.$events.fire('testEvent', this.eventData);
-
-        // Option #2
-        this.$events.emit('testEvent', this.eventData);
-
-        // Option #3
-        this.$events.$emit('testEvent', this.eventData);
+  data() {
+    return {
+      eventData: {
+        foo: 'baz'
+      }
     }
+  },
+
+  mounted() {
+    this.$events.fire('testEvent', this.eventData);
+    this.$events.emit('testEvent', this.eventData);
+    this.$events.$emit('testEvent', this.eventData);
+  }
 
 })
 ```
-
-_Note: `$events.fire` and `$events.emit` are aliases for `$events.$emit`._
 
 #### Listening for an event
-There are 3 methods that register event listeners. They're functionally identical and only differ in name.
-```
+There are 3 methods that register event listeners.
+
+_Note: `$events.listen` & `$events.on` are aliases for `$events.$on`._
+
+```javascript
 new Vue({
-
-    mounted() {
-        // Option #1
-        this.$events.listen('testEvent', eventData => console.log(eventData));
-
-        // Option #2
-        this.$events.on('testEvent', eventData => console.log(eventData));
-
-        // Option #3
-        this.$events.$on('testEvent', eventData => console.log(eventData));
-    }
-
+  mounted() {
+    this.$events.listen('testEvent', eventData => console.log(eventData));
+    this.$events.on('testEvent', eventData => console.log(eventData));
+    this.$events.$on('testEvent', eventData => console.log(eventData));
+  }
 })
 ```
-_Note: `$events.listen` and `$events.on` are aliases for `$events.$on`._
 
 #### Removing an event listener
-There are 3 methods that remove event listeners. They're functionally identical and only differ in name.
-```
+
+There are 3 methods that remove event listeners.
+
+
+_Note: `$events.off` & `$events.remove` are aliases for `$events.$off`._
+
+```javascript
 new Vue({
+  mounted() {
+    this.$events.on('testEvent', eventData => console.log(eventData));
+  },
 
-    mounted() {
-        this.$events.on('testEvent', eventData => console.log(eventData));
-    },
-
-    beforeDestroy() {
-      // Option #1
-      this.$events.$off('testEvent')
-
-      // Option #2
-      this.$events.off('testEvent')
-
-      // Option #3
-      this.$events.remove('testEvent')
-    }
-
+  beforeDestroy() {
+    this.$events.$off('testEvent')
+    this.$events.off('testEvent')
+    this.$events.remove('testEvent')
+  }
 })
 ```
-_Note: `$events.off` and `$events.remove` are aliases for `$events.$off`._
 
 
 ## Demo
