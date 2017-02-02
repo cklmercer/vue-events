@@ -55,18 +55,18 @@ new Vue({
             }
         }
     },
-    
+
     mounted() {
         // Option #1
         this.$events.fire('testEvent', this.eventData);
-        
+
         // Option #2
         this.$events.emit('testEvent', this.eventData);
-        
+
         // Option #3
         this.$events.$emit('testEvent', this.eventData);
     }
-    
+
 })
 ```
 
@@ -80,18 +80,42 @@ new Vue({
     mounted() {
         // Option #1
         this.$events.listen('testEvent', eventData => console.log(eventData));
-        
+
         // Option #2
         this.$events.on('testEvent', eventData => console.log(eventData));
-        
+
         // Option #3
         this.$events.$on('testEvent', eventData => console.log(eventData));
     }
-    
+
 })
 ```
-
 _Note: `$events.listen` and `$events.on` are aliases for `$events.$on`._
+
+#### Removing an event listener
+There are 3 methods that remove event listeners. They're functionally identical and only differ in name.
+```
+new Vue({
+
+    mounted() {
+        this.$events.on('testEvent', eventData => console.log(eventData));
+    },
+
+    beforeDestory() {
+      // Option #1
+      this.$events.$off('testEvent')
+
+      // Option #2
+      this.$events.off('testEvent')
+
+      // Option #3
+      this.$events.remove('testEvent')
+    }
+
+})
+```
+_Note: `$events.off` and `$events.remove` are aliases for `$events.$off`._
+
 
 ## Demo
 If you'd like to demo `vue-events` try [vue-stack-2.0](https://github.com/cklmercer/vue-stack-2.0)
