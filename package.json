@@ -1,7 +1,7 @@
 {
   "name": "vue-events",
   "version": "1.0.0",
-  "description": "Easy event handling for Vue 2.0 applications.",
+  "description": "Easy event handling for Vue applications.",
   "main": "dist/index.js",
   "scripts": {
     "compile": "babel --presets=es2015 -d dist src",
