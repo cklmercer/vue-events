@@ -16,7 +16,9 @@
     "events",
     "Vue",
     "2.0",
-    "bus"
+    "bus",
+    "plugin",
+    "event bus"
   ],
   "author": "Cody Mercer <me@codymercer.com>",
   "license": "MIT",
