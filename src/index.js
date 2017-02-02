@@ -1,8 +1,6 @@
 function plugin(Vue) {
 
-    if (plugin.installed) {
-        return;
-    }
+    if (plugin.installed) return
 
     const events = new Vue({
         methods: {
@@ -11,7 +9,7 @@ function plugin(Vue) {
             },
 
             emit(name, data = null) {
-                this.$emit(name, data);
+                this.$emit(name, data)
             },
 
             listen(name, cb) {
@@ -19,20 +17,20 @@ function plugin(Vue) {
             },
 
             on(name, cb) {
-                this.$on(name, cb);
+                this.$on(name, cb)
             }
         }
-    });
+    })
 
     Object.defineProperty(Vue.prototype, '$events', {
         get() {
-            return events;
+            return events
         }
     });
 }
 
 if (typeof window !== 'undefined' && window.Vue) {
-    window.Vue.use(plugin);
+    window.Vue.use(plugin)
 }
 
-export default plugin;
+export default plugin
