@@ -98,7 +98,7 @@ new Vue({
         this.$events.on('testEvent', eventData => console.log(eventData));
     },
 
-    beforeDestory() {
+    beforeDestroy() {
       // Option #1
       this.$events.$off('testEvent')
 
