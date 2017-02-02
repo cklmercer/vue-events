@@ -18,6 +18,14 @@ function plugin(Vue) {
 
             on(name, cb) {
                 this.$on(name, cb)
+            },
+
+            off(name, cb) {
+              this.$off(name, cb)
+            },
+
+            remove(name, cb) {
+              this.off(name, cb)
             }
         }
     })
