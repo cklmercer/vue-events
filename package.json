@@ -1,6 +1,6 @@
 {
   "name": "vue-events",
-  "version": "2.0.0-beta",
+  "version": "2.0.1",
   "description": "Easy event handling for Vue 2.0 applications.",
   "main": "dist/index.js",
   "scripts": {
