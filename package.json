@@ -1,6 +1,6 @@
 {
   "name": "vue-events",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Easy event handling for Vue applications.",
   "main": "dist/index.js",
   "scripts": {
@@ -14,11 +14,8 @@
   "keywords": [
     "Vue",
     "events",
-    "Vue",
-    "2.0",
     "bus",
-    "plugin",
-    "event bus"
+    "plugin"
   ],
   "author": "Cody Mercer <me@codymercer.com>",
   "license": "MIT",
