@@ -85,25 +85,22 @@ function plugin(Vue) {
     }
   })
 
-  // Determine if we're dealing with a Vue 2.0 installation.
-  if (typeof Vue.prototype._mount === 'function') {
-    // Register a mixin that adds an `events` option to Vue 2.0 components.
-    Vue.mixin({
-      // Hook into the Vue 2.0 `beforeCreate` life-cycle event.
-      beforeCreate() {
-        // Exit if there's no `events` option.
-        if (typeof this.$options.events !== 'object') return
-        // Listen for the `hook:beforeMount` Vue 2.0 life-cycle event.
-        this.$on('hook:beforeMount', () => {
-          // Loop through each event.
-          for (var key in this.$options.events) {
-            // Register a listener for the event.
-            events.$on(key, this.$options.events[key].bind(this))
-          }
-        })
-      }
-    })
-  }
+  // Register a mixin that adds an `events` option to Vue 2.0 components.
+  Vue.mixin({
+    // Hook into the Vue 2.0 `beforeCreate` life-cycle event.
+    beforeCreate() {
+      // Exit if there's no `events` option.
+      if (typeof this.$options.events !== 'object') return
+      // Listen for the `hook:beforeMount` Vue 2.0 life-cycle event.
+      this.$on('hook:beforeMount', () => {
+        // Loop through each event.
+        for (var key in this.$options.events) {
+          // Register a listener for the event.
+          events.$on(key, this.$options.events[key].bind(this))
+        }
+      })
+    }
+  })
 }
 
 // Check for `window.Vue`
