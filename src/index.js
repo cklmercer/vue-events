@@ -91,13 +91,30 @@ function plugin(Vue) {
     beforeCreate() {
       // Exit if there's no `events` option.
       if (typeof this.$options.events !== 'object') return
+      // Cache of events to bound functions for automatic unsubscriptions
+      var eventMap = {}
+      // Loop through each event.
+      for (var key in this.$options.events) {
+        // Assign event type and bound function to map
+        eventMap[key] = this.$options.events[key].bind(this)
+      }
       // Listen for the `hook:beforeMount` Vue 2.0 life-cycle event.
       this.$on('hook:beforeMount', () => {
         // Loop through each event.
-        for (var key in this.$options.events) {
+        for (var key in eventMap) {
           // Register a listener for the event.
-          events.$on(key, this.$options.events[key].bind(this))
+          events.$on(key, eventMap[key])
         }
+      })
+      // Listen for the `hook:beforeDestroy` Vue 2.0 life-cycle event.
+      this.$on('hook:beforeDestroy', () => {
+        // Loop through each event.
+        for (var key in eventMap) {
+          // Register a listener for the event.
+          events.$off(key, eventMap[key])
+        }
+        // Release cache
+        eventMap = null
       })
     }
   })
