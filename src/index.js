@@ -99,7 +99,7 @@ function plugin(Vue) {
         eventMap[key] = this.$options.events[key].bind(this)
       }
       // Listen for the `hook:beforeMount` Vue 2.0 life-cycle event.
-      this.$on('hook:beforeMount', () => {
+      this.$once('hook:beforeMount', () => {
         // Loop through each event.
         for (var key in eventMap) {
           // Register a listener for the event.
@@ -107,7 +107,7 @@ function plugin(Vue) {
         }
       })
       // Listen for the `hook:beforeDestroy` Vue 2.0 life-cycle event.
-      this.$on('hook:beforeDestroy', () => {
+      this.$once('hook:beforeDestroy', () => {
         // Loop through each event.
         for (var key in eventMap) {
           // Register a listener for the event.
