@@ -53,7 +53,7 @@ event methods.
 #### Firing an event
 There are 3 methods that fire events.
 
-_Note: `$events.fire` & `$events.emit` are aliases for `$events.$fire`_
+_Note: `$events.fire` & `$events.emit` are aliases for `$events.$emit`_
 
 ```javascript
 new Vue({
