@@ -11,20 +11,20 @@ export declare class VueEvents {
     * Emit the given event.
     * 
     * @param {string|object} event
-    * @param {...*} args
+    * @param {...any[]} args
     * @memberof VueEvents
     */
-    $emit(event: string, ...args): void;
+    $emit(event: string, ...args: any[]): void;
     
     /**
     * @borrows $emit as emit
     */
-    emit(event: string, ...args): void;
+    emit(event: string, ...args: any[]): void;
     
     /**
     * @borrows emit as fire
     */
-    fire(event: string, ...args): void;
+    fire(event: string, ...args: any[]): void;
     
     /**
     * Listen for the given event.
