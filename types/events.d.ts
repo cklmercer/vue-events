@@ -30,49 +30,51 @@ export declare class VueEvents {
     * Listen for the given event.
     *
     * @param {string} event
-    * @param {() => void} callback
+    * @param {(eventData: any) => void} callback
     * @memberof VueEvents
     */
-    $on(event: string, callback: () => void): void;
+    $on(event: string, callback: (eventData: any) => void): void;
     
     /**
     * @borrows $on as on
     */
-    on(event: string, callback: () => void): void;
+    on(event: string, callback: (eventData: any) => void): void;
     
     /**
     * @borrows on as listen
     */
-    listen(event: string, callback: () => void): void;
+    listen(event: string, callback: (eventData: any) => void): void;
 
     /**
     * Listen for the given event once.
     *
     * @param {string} event
-    * @param {() => void} callback
+    * @param {(eventData: any) => void} callback
+    * @memberof VueEvents
     */
-    $once(event: string, callback: () => void): void;
+    $once(event: string, callback: (eventData: any) => void): void;
 
     /**
     * @borrows $once as once
     */
-    once(event: string, callback: () => void): void;
+    once(event: string, callback: (eventData: any) => void): void;
 
     /**
      * Remove one or more event listeners.
      *
      * @param {string} event
-     * @param {() => void} callback
+     * @param {(eventData: any) => void} [callback]
+     * @memberof VueEvents
      */
-    $off(event:string, callback: () => void): void;
+    $off(event:string, callback?: (eventData: any) => void): void;
 
     /**
      * @borrows $off as off
      */
-    off(event:string, callback: () => void): void;
+    off(event:string, callback?: (eventData: any) => void): void;
 
     /**
      * @borrows off as remove
      */
-    remove(event:string, callback: () => void): void;
+    remove(event:string, callback?: (eventData: any) => void): void;
 }
