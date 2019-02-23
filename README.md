@@ -44,7 +44,7 @@ Method              | Params            | Description                           
 
 
 ## Usage
-#### The `$events` prototype object.
+### The `$events` prototype object.
 This plugin extends `Vue.prototype` to include a new `$events` object, which is a just a plain `vm`
 that will serve as your global event bus. The `$events` `vm` has a couple aliases for the standard
 event methods.
@@ -111,6 +111,31 @@ new Vue({
 })
 ```
 
+### The `events` component options.
+Provide an `events` map as part of your component options and vue-events will automatically call $on when the component is mounted and $off when the component is destroyed.
+
+```javascript
+new Vue({
+  events: {
+    testEvent(eventData){
+       console.log(eventData)    
+    }
+  }  
+})
+```
+
+Inside the event handlers, `this` is bound to the component instance. This way you can access your component's data, props, computed, methods, etc. For example:
+
+```javascript
+new Vue({
+  events: {
+    onShowAlert(message){
+       this.modalVisible = true
+       this.message = message
+    }
+  }  
+})
+```
 
 ## Demo
 If you'd like to demo `vue-events` try [vue-mix](https://github.com/cklmercer/vue-mix)
